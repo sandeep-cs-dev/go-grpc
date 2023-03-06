@@ -18,7 +18,7 @@ func main() {
 	fmt.Println("running main.go")
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
-		log.Fatalf("tcp dail failed at 8080: %v", err)
+		log.Fatalf("server can't listen on 8080: %v", err)
 	}
 	grpcServer := grpc.NewServer()
 	proto.RegisterMathServiceServer(grpcServer, &services.MathServiceServer{})
